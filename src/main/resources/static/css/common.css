@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+input, textarea {
+    width: 100%;
+}
+input:disabled,
+textarea:disabled {
+    background: white;
+    border: 0;
+}
+.pagination {
+    margin: 0;
+}
+.flex {
+    display: flex;
+}
+.flex-same div {
+    flex: 1;
+}
+.flex-end {
+    justify-content: flex-end;
+}
+.flex-between {
+    justify-content: space-between;
+}
+
+#container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 980px;
+}
+
+.search-wrap input {
+    width: 150px;
+}
