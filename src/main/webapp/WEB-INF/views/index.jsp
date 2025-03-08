@@ -22,6 +22,7 @@
                     <col/>
                     <col/>
                     <col/>
+                    <col/>
                     <col width="10%"/>
                 </colgroup>
                 <thead>
@@ -29,6 +30,7 @@
                         <th class="text-center">번호</th>
                         <th class="text-center">제목</th>
                         <th class="text-center">저자</th>
+                        <th class="text-center">수량</th>
                         <th class="text-center">등록일</th>
                         <th class="text-center">관리</th>
                     </tr>
@@ -41,6 +43,7 @@
                                     <td class="text-center">${book.rowNum}</td>
                                     <td style="cursor: pointer;" onclick="location.href='${ctx}/detail/${book.idx}'">${book.title}</td>
                                     <td class="text-center">${book.creator}</td>
+                                    <td class="text-center">${book.quantity}</td>
                                     <td class="text-center">2025-03-08</td>
                                     <td class="text-center"><button class="btn btn-primary btn-sm del-btn" value="${book.idx}" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">삭제</button></td>
                                 </tr>

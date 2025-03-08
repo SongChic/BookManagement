@@ -33,11 +33,11 @@
     </select>
     <insert id="regist" keyProperty="idx" useGeneratedKeys="true">
         INSERT INTO book
-            (idx, title, content, creator)
+            (idx, title, content, creator, quantity)
         VALUE
-            (#{idx}, #{title}, #{content}, #{creator})
+            (#{idx}, #{title}, #{content}, #{creator}, #{quantity})
         ON DUPLICATE KEY UPDATE
-            title = values(title), content = values(content), creator = values(creator)
+            title = values(title), content = values(content), creator = values(creator), quantity = values(quantity)
     </insert>
     <delete id="delete">
         DELETE FROM book

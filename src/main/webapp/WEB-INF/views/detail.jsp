@@ -44,6 +44,10 @@
                         <th>저자</th>
                         <td><input type="text" name="creator" value="${book.creator}"${state}/> </td>
                     </tr>
+                    <tr>
+                        <th>수량</th>
+                        <td><input type="number" name="quantity" value="${book.quantity}"${state}/> </td>
+                    </tr>
                     <c:if test="${!registState}">
                         <tr>
                             <th>작성일</th>
@@ -113,7 +117,8 @@
                 idx : $("input[name=idx]").val(),
                 title : $("input[name=title]").val(),
                 content : $("textarea[name=content]").val(),
-                creator : $("input[name=creator]").val()
+                creator : $("input[name=creator]").val(),
+                quantity : $("input[name=quantity]").val()
             },
             function( response ) {
                 alert(response.message);

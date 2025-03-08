@@ -14,4 +14,5 @@ public class BookDto {
     private String content;
     private Date created;
     private String creator;
+    private int quantity;
 }
