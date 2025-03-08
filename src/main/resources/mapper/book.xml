@@ -4,10 +4,16 @@
 
 <mapper namespace="com.song.example.dao.BookDao">
     <select id="getBookList" resultType="com.song.example.dto.BookDto">
-        select * from book
-        <if test="searchType != ''">
-            WHERE ${searchType} LIKE CONCAT('%', #{searchText}, '%')
-        </if>
+        SELECT
+            *
+        FROM
+            (
+                select @rownum:=@rownum+1 AS rownum, book.* from (SELECT @rownum:=0) TMP, book as book
+                <if test="searchType != ''">
+                    WHERE ${searchType} LIKE CONCAT('%', #{searchText}, '%')
+                </if>
+                    ORDER BY created DESC
+            ) AS result
         LIMIT ${(page - 1) * 10}, ${10}
     </select>
     <select id="getAllCount" resultType="Integer">

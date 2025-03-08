@@ -41,7 +41,7 @@
                         <td><input type="text" name="title" value="${book.title}"${state}/> </td>
                     </tr>
                     <tr>
-                        <th>작성자</th>
+                        <th>저자</th>
                         <td><input type="text" name="creator" value="${book.creator}"${state}/> </td>
                     </tr>
                     <c:if test="${!registState}">
@@ -61,7 +61,7 @@
                 <c:if test="${registState}">
                     <button style="margin-right: 10px;" type="button" class="regist-btn btn btn-primary">${book == null ? "등록" : "수정"}</button>
                 </c:if>
-                <c:if test="${editType == 0}">
+                <c:if test="${!registState and editType == 0}">
                     <button style="margin-right: 10px;" type="button" class="btn btn-primary" onclick="location.href='${ctx}/regist/${book.idx}?editType=1'">수정</button>
                 </c:if>
 
@@ -99,7 +99,7 @@
             return;
         }
         if ( $("input[name=creator]").val() == "" ) {
-            alert("제목을 입력해주세요.");
+            alert("저자를 입력해주세요.");
             return;
         }
 

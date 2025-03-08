@@ -9,6 +9,7 @@ import java.util.Date;
 @Setter
 public class BookDto {
     private int idx;
+    private int rowNum;
     private String title;
     private String content;
     private Date created;

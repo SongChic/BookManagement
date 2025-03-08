@@ -28,7 +28,7 @@
                     <tr>
                         <th class="text-center">번호</th>
                         <th class="text-center">제목</th>
-                        <th class="text-center">작성자</th>
+                        <th class="text-center">저자</th>
                         <th class="text-center">등록일</th>
                         <th class="text-center">관리</th>
                     </tr>
@@ -38,7 +38,7 @@
                         <c:when test="${fn:length(bookList) > 0}">
                             <c:forEach items="${bookList}" var="book">
                                 <tr>
-                                    <td class="text-center">${book.idx}</td>
+                                    <td class="text-center">${book.rowNum}</td>
                                     <td style="cursor: pointer;" onclick="location.href='${ctx}/detail/${book.idx}'">${book.title}</td>
                                     <td class="text-center">${book.creator}</td>
                                     <td class="text-center">2025-03-08</td>
